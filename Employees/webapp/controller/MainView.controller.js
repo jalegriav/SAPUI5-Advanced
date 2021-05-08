@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 sap.ui.define([
 		"sap/ui/core/mvc/Controller"
 	],
@@ -10,6 +12,21 @@ sap.ui.define([
 		return Controller.extend("logaligroup.Employees.controller.MainView", {
 			onInit: function () {
 
-			}
+            },
+            
+            onValidate : function () {
+                var inputEmployee = this.byId("inputEmployee");
+                var valueEmployee = inputEmployee.getValue();
+
+                if (valueEmployee.length === 6) {
+                    //inputEmployee.setDescription("OK");
+                    this.byId("labelCountry").setVisible(true);
+                    this.byId("slCountry").setVisible(true);
+                } else {
+                    //inputEmployee.setDescription("Not OK");
+                    this.byId("labelCountry").setVisible(false);
+                    this.byId("slCountry").setVisible(false);
+                }
+            }
 		});
 	});
