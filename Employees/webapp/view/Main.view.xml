@@ -13,13 +13,13 @@
                             <f:beginColumnPages>
                                 <mvc:XMLView id="masterEmployeeView" viewName="logaligroup.Employees.view.MasterEmployee"></mvc:XMLView>
                             </f:beginColumnPages>
-                            <f:beginColumnPages>
+                            <f:midColumnPages>
                                 <mvc:XMLView id="detailEmployeeView" viewName="logaligroup.Employees.view.EmployeeDetails"></mvc:XMLView>
-                            </f:beginColumnPages>
-                            <f:beginColumnPages>
+                            </f:midColumnPages>
+                            <f:endColumnPages>
                                 <Page >                                
                                 </Page>
-                            </f:beginColumnPages>                                                        
+                            </f:endColumnPages>                                                        
                         </f:FlexibleColumnLayout>
                     </content>
                     <footer>
