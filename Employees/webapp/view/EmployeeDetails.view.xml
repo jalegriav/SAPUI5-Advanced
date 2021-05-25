@@ -28,15 +28,24 @@
                 <items>
                     <HBox >
                         <Text text="{i18n>countryCode}" class="boldText sapUiTinyMarginEnd"/>
-                        <Text text="{jsonEmployees>Country}" />                    
+                        <Text text="{jsonEmployees>Country}" />   
+                        <layoutData>
+                            <FlexItemData growFactor="3"></FlexItemData>
+                        </layoutData>                 
                     </HBox>    
                     <HBox >
                         <Text text="{i18n>city}" class="boldText sapUiTinyMarginEnd"/>
                         <Text text="{jsonEmployees>City}" />                    
+                        <layoutData>
+                            <FlexItemData growFactor="2"></FlexItemData>
+                        </layoutData>                 
                     </HBox>     
                     <FlexBox direction="Row" alignItems="Start">
                         <Text text="{i18n>postalCode}" class="boldText sapUiTinyMarginEnd"/>
                         <Text text="{jsonEmployees>PostalCode}" />                    
+                        <layoutData>
+                            <FlexItemData growFactor="1"></FlexItemData>
+                        </layoutData>                 
                     </FlexBox>                                                       
                 </items>
             </FlexBox>
