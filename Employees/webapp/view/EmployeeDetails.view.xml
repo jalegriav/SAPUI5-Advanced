@@ -3,7 +3,7 @@
           displayBlock="true" 
           xmlns="sap.m"
           xmlns:core="sap.ui.core">
-<Page title="{i18n>employeeDetails}">
-    <Text text="{jsonEmployees>LastName}, {jsonEmployees>FirstName}"></Text>
-</Page>
+    <Page title="{i18n>employeeDetails}">
+        <Text text="{jsonEmployees>LastName}, {jsonEmployees>FirstName}" class="boldText"/>
+    </Page>
 </mvc:View>          
