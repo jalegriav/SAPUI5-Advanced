@@ -22,6 +22,13 @@ sap.ui.define([
         };
 
         function onDeleteIncidence(oEvent) {
+            var contexjObj = oEvent.getSource().getBindingContext("incidenceModel").getObject();
+            this._bus.publish("incidence", "onDeleteIncidence", { 
+                IncidenceId: contexjObj.IncidenceId,
+                SapId: contexjObj.SapId,
+                EmployeeId: contexjObj.EmployeeId
+            });
+        /**
             var tableIncidence = this.getView().byId("tableIncidence");
             var rowIncidence   = oEvent.getSource().getParent().getParent();
             var incidenceModel = this.getView().getModel("incidenceModel");
@@ -38,7 +45,7 @@ sap.ui.define([
 
             for (var j in tableIncidence.getContent()){
                 tableIncidence.getContent()[j].bindElement("incidenceModel>/" + j);
-            }
+            }  */            
         };
 
         function onSaveIncidence(oEvent) {
@@ -73,9 +80,9 @@ sap.ui.define([
         EmployeeDetails.prototype.Formatter = formatter;
         EmployeeDetails.prototype.onSaveIncidence = onSaveIncidence;
 
-        EmployeeDetails.updateIncidenceCreationDate = updateIncidenceCreationDate;
-        EmployeeDetails.updateIncidenceReason = updateIncidenceReason;
-        EmployeeDetails.updateIncidenceType = updateIncidenceType;
+        EmployeeDetails.prototype.updateIncidenceCreationDate = updateIncidenceCreationDate;
+        EmployeeDetails.prototype.updateIncidenceReason = updateIncidenceReason;
+        EmployeeDetails.prototype.updateIncidenceType = updateIncidenceType;
         
         return EmployeeDetails;
 });
