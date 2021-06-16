@@ -2,8 +2,17 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/routing/History",
-    "sap/m/MessageBox"
-], function (Controller, History, MessageBox) {
+    "sap/m/MessageBox",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator",
+
+/**
+ * @param {typeof sap.ui.core.mvc.Controller} Controller 
+ * @param {typeof sap.ui.model.Filter} Filter
+ * @param {typeof sap.ui.model.FilterOperator}  FilterOperator
+ */    
+
+], function (Controller, History, MessageBox, Filter, FilterOperator) {
     function _onObjectMatched(oEvent) {
         this.onClearSignature();
 
